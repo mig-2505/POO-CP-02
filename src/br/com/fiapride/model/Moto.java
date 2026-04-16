@@ -6,11 +6,19 @@ public class Moto extends Veiculo{
 
     public Moto(boolean bau, String placa, double capacidade) {
         super(placa, capacidade);
-        this.bau = bau;
+        this.setBau(bau);
+    }
+
+    public void mostrarDetalhes() {
+        System.out.println("Tipo de veiculo: Moto");
+    }
+
+    public boolean podeTransportar(Pacote pacote) {
+        return getCapacidade() >= pacote.getPeso() && isBau();
     }
 
     public boolean isBau() {return bau;}
 
-    public void setBau(boolean bau) {this.bau = bau;}
+    private void setBau(boolean bau) {this.bau = bau;}
 
 }

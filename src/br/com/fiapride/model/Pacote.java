@@ -6,14 +6,9 @@ public class Pacote {
     private String situacao;
 
     public Pacote(String codigo, double peso, String situacao) {
-        this.codigoPostal = codigo;
-        this.situacao = situacao;
-
-        if (peso < 0) {
-            System.out.println("Capacidade inválida!");
-        } else {
-            this.peso = peso;
-        }
+        this.setCodigo(codigo);
+        this.setSituacao(situacao);
+        this.setPeso(peso);
     }
 
     public void mudarSituacao(String situacaoAtualizada) {
@@ -24,13 +19,13 @@ public class Pacote {
 
     public String getCodigo() {return codigoPostal;}
 
-    public void setCodigo(String codigo) {this.codigoPostal = codigo;}
+    private void setCodigo(String codigo) {this.codigoPostal = codigo;}
 
     public double getPeso() {return peso;}
 
-    public void setPeso(double peso) {this.peso = peso;}
+    private void setPeso(double peso) {this.peso = peso;}
 
     public String getSituacao() {return situacao;}
 
-    public void setSituacao(String situacao) {this.situacao = situacao;}
+    private void setSituacao(String situacao) {this.situacao = situacao;}
 }

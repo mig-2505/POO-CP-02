@@ -6,11 +6,19 @@ public class Caminhao extends Veiculo{
 
     public Caminhao(String placa, double capacidade, int eixos) {
         super(placa, capacidade);
-        this.eixos = eixos;
+        this.setEixos(eixos);
+    }
+
+    public void mostrarDetalhes() {
+        System.out.println("Tipo de veiculo: Caminhão");
+    }
+
+    public boolean podeTransportar(Pacote pacote) {
+        return getCapacidade() >= pacote.getPeso() && getEixos() > 0;
     }
 
     public int getEixos() {return eixos;}
 
-    public void setEixos(int eixos) {this.eixos = eixos;}
+    private void setEixos(int eixos) {this.eixos = eixos;}
 }
 
